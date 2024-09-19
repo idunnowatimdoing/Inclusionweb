@@ -1,0 +1,81 @@
+// content.js
+
+// Initialize variables
+let magnificationLevel = 1.5; // Default magnification level
+
+// Function to apply magnification and dimming effect
+function applyMagnification(event) {
+  const target = event.target;
+  
+  // Check if the hovered element is a paragraph
+  if (target && target.tagName.toLowerCase() === 'p') {
+    // Apply magnification
+    target.style.transform = `scale(${magnificationLevel})`;
+    target.style.transformOrigin = 'center left';
+    target.style.position = 'relative';
+    target.style.zIndex = '1000';
+
+    // Apply dimming effect to the background
+    document.body.classList.add('dim-background');
+  }
+}
+
+// Function to remove magnification and dimming effect
+function removeMagnification(event) {
+  const target = event.target;
+  
+  if (target && target.tagName.toLowerCase() === 'p') {
+    // Remove magnification
+    target.style.transform = 'scale(1)';
+    target.style.zIndex = 'initial';
+
+    // Remove dimming effect if no other paragraph is hovered
+    document.body.classList.remove('dim-background');
+  }
+}
+
+// Listen for mouseover and mouseout events
+document.addEventListener('mouseover', applyMagnification);
+document.addEventListener('mouseout', removeMagnification);
+
+// Function to load magnification level from storage
+function loadSettings() {
+  // Check for browser compatibility (Chrome or Firefox)
+  const storage = chrome.storage ? chrome.storage : browser.storage;
+
+  storage.sync.get(['magnificationLevel'], function(result) {
+    if (result.magnificationLevel) {
+      magnificationLevel = parseFloat(result.magnificationLevel);
+    }
+  });
+}
+
+// Load settings on initial run
+loadSettings();
+
+// Handle dynamically loaded content
+new MutationObserver(() => {
+  // Re-attach event listeners if new content is added
+  document.removeEventListener('mouseover', applyMagnification);
+  document.removeEventListener('mouseout', removeMagnification);
+
+  document.addEventListener('mouseover', applyMagnification);
+  document.addEventListener('mouseout', removeMagnification);
+}).observe(document.body, { childList: true, subtree: true });
+/* content.css */
+
+/* Dimming effect on the background */
+.dim-background *:not(p:hover) {
+  opacity: 0.5 !important;
+}
+<!-- options.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Extension Settings</title>
+</head>
+<body>
+  <h1>Text Magnification Settings</h1>
+  <label for="magnification">Magnification Level:</label>
+  <input type="number" id="magnification" name="magnification" min="1" max="3" step="0.1" value="1.5">
+  <button id="save">Save</button>
