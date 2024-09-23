@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InclusiveWeb Solutions</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="popup-container">
+    <h1>InclusiveWeb Solutions</h1>
+    <div class="feature-toggle">
+      <label for="toggleMagnification">Text Magnification</label>
+      <input type="checkbox" id="toggleMagnification">
+    </div>
+    <div class="feature-toggle">
+      <label for="toggleColorCorrection">Color Correction</label>
+      <input type="checkbox" id="toggleColorCorrection">
+    </div>
+    <div class="feature-toggle">
+      <label for="toggleSimplification">Layout Simplification</label>
+      <input type="checkbox" id="toggleSimplification">
+    </div>
+    <div class="feature-select">
+      <label for="colorBlindnessType">Color Vision Type:</label>
+      <select id="colorBlindnessType">
+        <option value="normal">Normal Vision</option>
+        <option value="protanopia">Protanopia</option>
+        <option value="deuteranopia">Deuteranopia</option>
+        <option value="tritanopia">Tritanopia</option>
+        <option value="achromatopsia">Achromatopsia</option>
+        <option value="protanomaly">Protanomaly</option>
+        <option value="deuteranomaly">Deuteranomaly</option>
+        <option value="tritanomaly">Tritanomaly</option>
+      </select>
+    </div>
+    <a href="#" id="advancedOptionsLink" class="options-link">Advanced Options</a>
+  </div>
+  <!-- Load popup.js file -->
+  <script src="popup.js"></script>
+</body>
+</html>

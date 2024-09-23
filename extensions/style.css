@@ -1,0 +1,106 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f5f7fa;
+  color: #2c3e50;
+}
+
+/* Container Styles */
+.popup-container, .options-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styles */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #34495e;
+}
+
+/* Button Styles */
+button {
+  background-color: #3498db;
+  border: none;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Option Styles */
+.option {
+  margin-bottom: 20px;
+}
+
+/* Label Styles */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Input and Select Styles */
+input[type="number"], select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccd1d9;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+}
+
+input[type="number"]:focus, select:focus {
+  outline: none;
+  border-color: #3498db;
+  background-color: #ffffff;
+}
+
+/* Status Message Styles */
+#status {
+  margin-top: 15px;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* Link Styles */
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Accessibility and Responsive Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  button {
+    width: 100%;
+  }
+}

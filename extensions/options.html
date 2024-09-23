@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InclusiveWeb Solutions - Options</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="options-container">
+    <h1>InclusiveWeb Solutions - Advanced Options</h1>
+    
+    <!-- Magnification Level -->
+    <div class="option">
+      <label for="magnificationLevel">Magnification Level:</label>
+      <input type="range" id="magnificationLevel" min="1" max="3" step="0.1" value="1.5">
+      <span id="magnificationValue">1.5x</span>
+    </div>
+    
+    <!-- Color Vision Deficiency Type -->
+    <div class="option">
+      <label for="colorBlindnessType">Color Vision Deficiency Type:</label>
+      <select id="colorBlindnessType">
+        <option value="normal">Normal Vision</option>
+        <option value="protanopia">Protanopia (Red-Blind)</option>
+        <option value="deuteranopia">Deuteranopia (Green-Blind)</option>
+        <option value="tritanopia">Tritanopia (Blue-Blind)</option>
+        <option value="achromatopsia">Achromatopsia (Total Color Blindness)</option>
+        <option value="protanomaly">Protanomaly (Red-Weak)</option>
+        <option value="deuteranomaly">Deuteranomaly (Green-Weak)</option>
+        <option value="tritanomaly">Tritanomaly (Blue-Weak)</option>
+      </select>
+    </div>
+
+    <!-- Color Preview Box -->
+    <div class="option">
+      <label for="colorPreview">Color Preview:</label>
+      <div id="colorPreview" class="color-preview"></div>
+    </div>
+
+    <!-- Layout Simplification Options -->
+    <h2>Layout Simplification Options</h2>
+    <div class="option">
+      <label>
+        <input type="checkbox" id="layoutSimplificationEnabled"> Enable Layout Simplification
+      </label>
+    </div>
+    
+    <!-- Advanced Layout Simplification Options -->
+    <div id="advancedLayoutOptions" style="display: none;">
+      <div class="option">
+        <label><input type="checkbox" id="hideImages"> Hide Images</label>
+      </div>
+      <div class="option">
+        <label><input type="checkbox" id="simplifyFonts"> Simplify Fonts</label>
+      </div>
+      <div class="option">
+        <label><input type="checkbox" id="increaseParagraphSpacing"> Increase Paragraph Spacing</label>
+      </div>
+      <div class="option">
+        <label><input type="checkbox" id="removeBackgroundImages"> Remove Background Images</label>
+      </div>
+      <div class="option">
+        <label><input type="checkbox" id="highlightLinks"> Highlight Links</label>
+      </div>
+    </div>
+
+    <!-- Focus Zoom Options -->
+    <h2>Focus Zoom Options</h2>
+    <div class="option">
+      <label><input type="checkbox" id="focusZoomEnabled"> Enable Focus Zoom</label>
+    </div>
+    <div class="option">
+      <label for="focusZoomLevel">Focus Zoom Level:</label>
+      <input type="range" id="focusZoomLevel" min="1.5" max="5" step="0.5" value="2">
+      <span id="focusZoomValue">2x</span>
+    </div>
+
+    <!-- Text-to-Speech Options -->
+    <h2>Text-to-Speech Options</h2>
+    <div class="option">
+      <label><input type="checkbox" id="ttsEnabled"> Enable Text-to-Speech</label>
+    </div>
+    <div id="advancedTTSOptions">
+      <div class="option">
+        <label for="ttsVoice">Voice:</label>
+        <select id="ttsVoice"></select>
+      </div>
+      <div class="option">
+        <label for="ttsRate">Rate:</label>
+        <input type="range" id="ttsRate" min="0.5" max="2" step="0.1" value="1">
+        <span id="ttsRateValue">1x</span>
+      </div>
+      <div class="option">
+        <label for="ttsPitch">Pitch:</label>
+        <input type="range" id="ttsPitch" min="0.5" max="2" step="0.1" value="1">
+        <span id="ttsPitchValue">1</span>
+      </div>
+    </div>
+
+    <!-- Keyboard Shortcuts -->
+    <h2>Keyboard Shortcuts</h2>
+    <div class="option">
+      <label for="toggleMagnificationShortcut">Toggle Magnification:</label>
+      <input type="text" id="toggleMagnificationShortcut" placeholder="e.g., Ctrl+Shift+M">
+    </div>
+    <div class="option">
+      <label for="toggleColorCorrectionShortcut">Toggle Color Correction:</label>
+      <input type="text" id="toggleColorCorrectionShortcut" placeholder="e.g., Ctrl+Shift+C">
+    </div>
+    <div class="option">
+      <label for="toggleLayoutSimplificationShortcut">Toggle Layout Simplification:</label>
+      <input type="text" id="toggleLayoutSimplificationShortcut" placeholder="e.g., Ctrl+Shift+L">
+    </div>
+    <div class="option">
+      <label for="toggleFocusZoomShortcut">Toggle Focus Zoom:</label>
+      <input type="text" id="toggleFocusZoomShortcut" placeholder="e.g., Ctrl+Shift+Z">
+    </div>
+    <div class="option">
+      <label for="toggleTTSShortcut">Toggle Text-to-Speech:</label>
+      <input type="text" id="toggleTTSShortcut" placeholder="e.g., Ctrl+Shift+T">
+    </div>
+
+    <!-- Save Options Button -->
+    <button id="saveOptions" class="primary-button">Save Options</button>
+    <div id="status" class="status-message"></div>
+  </div>
+
+  <!-- JavaScript -->
+  <script type="module" src="options.js"></script>
+</body>
+</html>
